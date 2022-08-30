@@ -20,6 +20,11 @@ export class ExperimentsComponent implements OnInit {
     }
    }
 
+   removeExperiment(experiment) {
+    let index = this.experOnBoard.indexOf(experiment);
+    this.experOnBoard.splice(index, 1);
+   }
+
    resetExperiments() {
     this.experOnBoard = [];
    }

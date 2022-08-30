@@ -37,6 +37,12 @@ export class EquipmentComponent implements OnInit {
     }
    }
 
+   removeItem(item) {
+    let index = this.cargoHold.indexOf(item);
+    this.cargoHold.splice(index, 1);
+    this.cargoMass -= item.mass;
+   }
+
    emptyHold() {
     this.cargoHold = [];
     this.cargoMass = 0;
