@@ -1,7 +1,15 @@
 <div class="displayBox">
     <h3>Possible Experiments</h3>
     <ul>
-      <li *ngFor="let experiment of experiments">{{experiment}}</li>
+      <li *ngFor="let experiment of experiments"><button (click)="addExperiment(experiment)" [class.active]="!disabled" [disabled]="experOnBoard.length === maxExperiments">Add</button>{{experiment}}</li>
     </ul>
 </div>
 <hr>
+<div class = "displayBox">
+  <h3>Experiments On Board: {{experOnBoard.length}}/{{maxExperiments}} Spots Filled</h3>
+  <ol>
+      <li *ngFor="let experiment of experOnBoard">{{experiment}}</li>
+  </ol>
+  <!-- Add the "Empty Hold" button here. -->
+  <button (click)="resetExperiments()">Reset On Board Experiments</button>
+</div>
